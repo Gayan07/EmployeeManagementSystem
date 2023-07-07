@@ -7,7 +7,7 @@ import static java.lang.Class.forName;
 
 public class dbConnection {
 
-    public Connection con(){
+    public static Connection con(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/employeemanagementsystem","root","1234");
