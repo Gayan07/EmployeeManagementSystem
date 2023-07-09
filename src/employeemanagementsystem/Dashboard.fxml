@@ -18,9 +18,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="employeemanagementsystem.dashboardController">
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane fx:id="mainForm" prefHeight="200.0" prefWidth="200.0">
          <children>
             <BorderPane layoutX="57.0" layoutY="71.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <top>
@@ -34,12 +34,12 @@
                                     <Font name="Tahoma Bold" size="20.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="MinimizeButton" layoutX="1030.0" layoutY="7.0" mnemonicParsing="false" styleClass="minimize" stylesheets="@dashboardDesign.css" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="4.0">
+                              <Button fx:id="minimizeButton" layoutX="1030.0" layoutY="7.0" mnemonicParsing="false" onAction="#minimize" styleClass="minimize" stylesheets="@dashboardDesign.css" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="4.0">
                                  <graphic>
                                     <FontAwesomeIcon glyphName="MINUS" />
                                  </graphic>
                               </Button>
-                              <Button fx:id="closeButton" layoutX="1060.0" layoutY="7.0" mnemonicParsing="false" styleClass="close" stylesheets="@dashboardDesign.css" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
+                              <Button fx:id="closeButton" layoutX="1060.0" layoutY="7.0" mnemonicParsing="false" onAction="#close" styleClass="close" stylesheets="@dashboardDesign.css" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
                                  <graphic>
                                     <FontAwesomeIcon glyphName="CLOSE" />
                                  </graphic>
@@ -81,7 +81,7 @@
                                     <FontAwesomeIcon fill="WHITE" glyphName="MONEY" />
                                  </graphic>
                               </Button>
-                              <Button fx:id="logoutButton" layoutX="14.0" layoutY="515.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" stylesheets="@dashboardDesign.css">
+                              <Button fx:id="logoutButton" layoutX="14.0" layoutY="515.0" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="30.0" stylesheets="@dashboardDesign.css">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="1.5em" text="" />
                                  </graphic>
@@ -208,8 +208,8 @@
                                                       <TableColumn fx:id="addEmployeeColDateMember" prefWidth="140.0" text="Date Member" />
                                                   </columns>
                                                 </TableView>
-                                                <TextField fx:id="employeeSearchTextField" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="239.0" promptText="Search" />
-                                                <FontAwesomeIcon glyphName="SEARCH" layoutX="22.0" layoutY="31.0" size="1.5em" />
+                                                <TextField fx:id="employeeSearchTextField" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="239.0" promptText="Search" styleClass="search" stylesheets="@dashboardDesign.css" />
+                                                <FontAwesomeIcon glyphName="SEARCH" layoutX="19.0" layoutY="32.0" size="1.5em" />
                                              </children>
                                           </AnchorPane>
                                           <Label layoutX="10.0" layoutY="332.0" text="Employee ID :">
@@ -217,37 +217,37 @@
                                                 <Font name="Tahoma" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="addEmployeeEmployeeIDTextField" layoutX="121.0" layoutY="329.0" />
+                                          <TextField fx:id="addEmployeeEmployeeIDTextField" layoutX="121.0" layoutY="329.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
                                           <Label layoutX="23.0" layoutY="376.0" text="First Name :">
                                              <font>
                                                 <Font name="Tahoma" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="addEmployeeFirstNameTextField" layoutX="121.0" layoutY="373.0" />
+                                          <TextField fx:id="addEmployeeFirstNameTextField" layoutX="121.0" layoutY="373.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
                                           <Label layoutX="23.0" layoutY="417.0" text="Last Name :">
                                              <font>
                                                 <Font name="Tahoma" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="addEmployeeLastNameTextField" layoutX="121.0" layoutY="414.0" />
+                                          <TextField fx:id="addEmployeeLastNameTextField" layoutX="121.0" layoutY="414.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
                                           <Label layoutX="43.0" layoutY="457.0" text="Gender :">
                                              <font>
                                                 <Font name="Tahoma" size="15.0" />
                                              </font>
                                           </Label>
-                                          <ComboBox fx:id="addEmployeeGenderComboBox" layoutX="121.0" layoutY="454.0" prefWidth="150.0" promptText="Choose" />
+                                          <ComboBox fx:id="addEmployeeGenderComboBox" layoutX="121.0" layoutY="454.0" prefWidth="150.0" promptText="Choose" styleClass="text-field" stylesheets="@dashboardDesign.css" />
                                           <Label layoutX="298.0" layoutY="335.0" text="Phone Number :">
                                              <font>
                                                 <Font name="Tahoma" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="addEmployeePhoneNumberTextField" layoutX="430.0" layoutY="332.0" />
+                                          <TextField fx:id="addEmployeePhoneNumberTextField" layoutX="430.0" layoutY="332.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
                                           <Label layoutX="344.0" layoutY="376.0" text="Position :">
                                              <font>
                                                 <Font name="Tahoma" size="15.0" />
                                              </font>
                                           </Label>
-                                          <ComboBox fx:id="addEmployeePositionComboBox" layoutX="429.0" layoutY="373.0" prefWidth="150.0" promptText="Choose" />
+                                          <ComboBox fx:id="addEmployeePositionComboBox" layoutX="429.0" layoutY="373.0" prefWidth="150.0" promptText="Choose" styleClass="text-field" stylesheets="@dashboardDesign.css" />
                                           <AnchorPane layoutX="743.0" layoutY="329.0" prefHeight="150.0" prefWidth="113.0" stylesheets="@dashboardDesign.css">
                                              <styleClass>
                                                 <String fx:value="white-bg" />
@@ -255,13 +255,13 @@
                                              </styleClass>
                                              <children>
                                                 <ImageView fx:id="addEmployeeImageView" fitHeight="150.0" fitWidth="113.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true" />
-                                                <Button fx:id="addEmployeeImportButton" layoutX="16.0" layoutY="120.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Import" />
+                                                <Button fx:id="addEmployeeImportButton" layoutX="-1.0" layoutY="120.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="115.0" styleClass="import-button" stylesheets="@dashboardDesign.css" text="Import" />
                                              </children>
                                           </AnchorPane>
-                                          <Button fx:id="addEmployeeAddButton" layoutX="298.0" layoutY="479.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" text="Add" />
-                                          <Button fx:id="addEmployeeUpdateButton" layoutX="393.0" layoutY="479.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" text="Update" />
-                                          <Button fx:id="addEmployeeDeleteButton" layoutX="488.0" layoutY="479.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" text="Delete" />
-                                          <Button fx:id="addEmployeeClearButton" layoutX="582.0" layoutY="479.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" text="Clear" />
+                                          <Button fx:id="addEmployeeAddButton" layoutX="298.0" layoutY="479.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="add-button" stylesheets="@dashboardDesign.css" text="Add" />
+                                          <Button fx:id="addEmployeeUpdateButton" layoutX="393.0" layoutY="479.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="update-button" stylesheets="@dashboardDesign.css" text="Update" />
+                                          <Button fx:id="addEmployeeDeleteButton" layoutX="488.0" layoutY="479.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="delete-button" stylesheets="@dashboardDesign.css" text="Delete" />
+                                          <Button fx:id="addEmployeeClearButton" layoutX="582.0" layoutY="479.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="clear-button" stylesheets="@dashboardDesign.css" text="Clear" />
                                        </children>
                                        <styleClass>
                                           <String fx:value="white-bg" />
@@ -285,13 +285,13 @@
                                           <Font name="Tahoma" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="salaryEmployeeIDTextField" layoutX="129.0" layoutY="24.0" />
+                                    <TextField fx:id="salaryEmployeeIDTextField" layoutX="129.0" layoutY="24.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
                                     <Label layoutX="26.0" layoutY="68.0" text="First Name :">
                                        <font>
                                           <Font name="Tahoma" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="salaryFirstNameLabel" layoutX="129.0" layoutY="64.0" prefHeight="25.0" prefWidth="149.0" text="Label">
+                                    <Label fx:id="salaryFirstNameLabel" layoutX="129.0" layoutY="64.0" prefHeight="25.0" prefWidth="149.0" styleClass="label-info" stylesheets="@dashboardDesign.css">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -301,7 +301,7 @@
                                           <Font name="Tahoma" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="salaryLastNameLabel" layoutX="128.0" layoutY="94.0" prefHeight="25.0" prefWidth="149.0" text="Label">
+                                    <Label fx:id="salaryLastNameLabel" layoutX="128.0" layoutY="94.0" prefHeight="25.0" prefWidth="149.0" styleClass="label-info" stylesheets="@dashboardDesign.css">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -311,7 +311,7 @@
                                           <Font name="Tahoma" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="salaryPositionLabel" layoutX="127.0" layoutY="125.0" prefHeight="25.0" prefWidth="149.0" text="Label">
+                                    <Label fx:id="salaryPositionLabel" layoutX="127.0" layoutY="125.0" prefHeight="25.0" prefWidth="149.0" styleClass="label-info" stylesheets="@dashboardDesign.css">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -321,9 +321,9 @@
                                           <Font name="Tahoma" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="salarySalaryTextField" layoutX="129.0" layoutY="163.0" />
-                                    <Button fx:id="salaryClearButton" layoutX="45.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Clear" />
-                                    <Button fx:id="salaryUpdateButton" layoutX="176.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Update" />
+                                    <TextField fx:id="salarySalaryTextField" layoutX="129.0" layoutY="163.0" styleClass="text-field" stylesheets="@dashboardDesign.css" />
+                                    <Button fx:id="salaryClearButton" layoutX="45.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" styleClass="clear-button" stylesheets="@dashboardDesign.css" text="Clear" />
+                                    <Button fx:id="salaryUpdateButton" layoutX="176.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" styleClass="update-button" stylesheets="@dashboardDesign.css" text="Update" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="326.0" layoutY="14.0" prefHeight="529.0" prefWidth="541.0" stylesheets="@dashboardDesign.css">
