@@ -70,6 +70,9 @@ public class FXMLDocumentController implements Initializable {
                 alert.showAndWait();
             }else {
                 if(resultSet.next()){
+
+                    getData.username = userNameTextField.getText();
+
                     alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Information Message");
                     alert.setHeaderText(null);

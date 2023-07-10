@@ -66,17 +66,17 @@
                                  </font>
                               </Label>
                               <Line endX="100.0" layoutX="111.0" layoutY="138.0" startX="-100.0" stroke="WHITE" />
-                              <Button fx:id="homeButton" layoutX="21.0" layoutY="150.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Home">
+                              <Button fx:id="homeButton" layoutX="21.0" layoutY="150.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Home">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" />
                                  </graphic>
                               </Button>
-                              <Button fx:id="addEmployeeButton" layoutX="21.0" layoutY="195.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Add Employee">
+                              <Button fx:id="addEmployeeButton" layoutX="21.0" layoutY="195.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Add Employee">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="PLUS" size="1.5em" />
                                  </graphic>
                               </Button>
-                              <Button fx:id="salaryButton" layoutX="21.0" layoutY="243.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Employee Salary">
+                              <Button fx:id="salaryButton" layoutX="21.0" layoutY="243.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Employee Salary">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="MONEY" />
                                  </graphic>
@@ -184,7 +184,7 @@
                                  </children></AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutX="246.0" layoutY="61.0" prefHeight="553.0" prefWidth="879.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="addEmployeeForm" layoutX="246.0" layoutY="61.0" prefHeight="553.0" prefWidth="879.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane fx:id="addEmployeeForm" layoutX="101.0" layoutY="145.0" prefHeight="553.0" prefWidth="879.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>

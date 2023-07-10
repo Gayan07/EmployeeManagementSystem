@@ -1,5 +1,6 @@
 package employeemanagementsystem;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -7,9 +8,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
-import javax.swing.text.html.ImageView;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -110,7 +112,7 @@ public class dashboardController implements Initializable {
     private ComboBox<?> addEmployeePositionComboBox;
 
     @FXML
-    private ImageView addEmployeeImageView;
+    private ImageView  addEmployeeImageView;
 
     @FXML
     private Button addEmployeeImportButton;
@@ -169,6 +171,40 @@ public class dashboardController implements Initializable {
     @FXML
     private TableColumn<?, ?> salaryColSalary;
 
+    public void displayUserName(){
+        userNameTextField.setText(getData.username);
+    }
+     public void switchForm(ActionEvent event){
+
+         if(event.getSource() == homeButton){
+             homeForm.setVisible(true);
+             addEmployeeForm.setVisible(false);
+             salaryForm.setVisible(false);
+
+             homeButton.setStyle("-fx-background-color: linear-gradient(to bottom right, #00b6ff, #28966c)");
+             addEmployeeButton.setStyle("-fx-background-color: transparent");
+             salaryButton.setStyle("-fx-background-color: transparent");
+
+         }else if (event.getSource() == addEmployeeButton){
+             homeForm.setVisible(false);
+             addEmployeeForm.setVisible(true);
+             salaryForm.setVisible(false);
+
+             homeButton.setStyle("-fx-background-color: transparent");
+             addEmployeeButton.setStyle("-fx-background-color: linear-gradient(to bottom right, #00b6ff, #28966c)");
+             salaryButton.setStyle("-fx-background-color: transparent");
+
+         }else if (event.getSource() == salaryButton){
+             homeForm.setVisible(false);
+             addEmployeeForm.setVisible(false);
+             salaryForm.setVisible(true);
+
+             homeButton.setStyle("-fx-background-color: transparent");
+             addEmployeeButton.setStyle("-fx-background-color: transparent");
+             salaryButton.setStyle("-fx-background-color: linear-gradient(to bottom right, #00b6ff, #28966c)");
+         }
+
+     }
     public void logout() throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirm Message");
