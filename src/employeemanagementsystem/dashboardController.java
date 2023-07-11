@@ -1,5 +1,6 @@
 package employeemanagementsystem;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +15,11 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Date;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -171,6 +177,29 @@ public class dashboardController implements Initializable {
     @FXML
     private TableColumn<?, ?> salaryColSalary;
 
+    private Connection connect;
+    private Statement statement;
+    private PreparedStatement preparedStatement;
+    private ResultSet resultSet;
+
+
+    public ObservableList<employeeData> addEmployeeListData(){
+        String sql = "SELECT * FROM employee";
+
+        connect = database.connectDb();
+
+        try{
+            preparedStatement = connect.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+            employeeData employeeData;
+
+            while(resultSet.next()){
+                employeeData = new employeeData( resultSet.getInt("employee_id") ,resultSet.getString("firstname"), resultSet.getString("lastName"), resultSet.getString("gender"), resultSet.getString("phoneNum") , resultSet.getString("position") , resultSet.getString("image"), resultSet.getDate("Date"));
+            }
+
+        }catch (Exception e) {e.printStackTrace();}
+        return null;
+    }
     public void displayUserName(){
         userNameTextField.setText(getData.username);
     }
